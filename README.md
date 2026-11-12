@@ -2,6 +2,12 @@
 
 Print text, ASCII art, images and QR codes to an Epson TM-L90 thermal printer using Python and ESC/POS.
 
+## Results
+
+| `tm-l90 code.py` — header, ASCII art, image and QR | `scroll_print.py` and `tower_print.py` |
+|:---:|:---:|
+| <img src="imgs/demo-print.jpeg" alt="Demo print with TW-IT header, dithered car photo, ASCII cat and QR codes" width="400"> | <img src="imgs/scroll-and-tower.jpeg" alt="Parchment scroll reading 'You're a wizard!' next to a giant UT and ASCII tower" width="400"> |
+
 ## Requirements
 
 - Windows with the EPSON Advanced Printer Driver (APD) for the TM-L90 installed, using a USB port
@@ -46,6 +52,36 @@ py -3.14 scroll_print.py "Your message" --preview           # show in terminal, 
   |  Your message.                           |
   |  ________________________________________|_
   \_/_________________________________________/
+```
+
+### `tower_print.py` — UT Tower
+
+A giant "UT" in the printer's largest built-in font, with an ASCII UT Tower underneath.
+
+```powershell
+py -3.14 tower_print.py                                 # giant UT + tower
+py -3.14 tower_print.py --text "YOUR TEXT" --size 3     # custom headline, size 1-8
+py -3.14 tower_print.py --caption "Austin, Texas"       # small line under the tower
+py -3.14 tower_print.py --preview                       # show in terminal, no printing
+```
+
+```
+                   U T          (printed at 8x size)
+
+                    !
+                   /^\
+                  |:::|
+                 _|___|_
+                |=======|
+                | |_|_| |
+                |  .-.  |
+                | ( + ) |
+                |  '-'  |
+                | [] [] |
+       _________|_______|_________
+      |    [] [] []   [] [] []    |
+      |___________|___|___________|
+      /___________________________\
 ```
 
 ## Notes
